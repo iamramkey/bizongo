@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+#loaderParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  z-index: 10;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.u-margin-top-medium {
+  margin-top: 10px;
+}
+
+.u-margin-top-small {
+  margin-top: 5px;
+}
+
+.u-margin-top-large {
+  margin-top: 20px;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 10px;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 5px;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 20px;
+}
+
+.table-text-word-wrap {
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

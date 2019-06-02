@@ -1,0 +1,27 @@
+<div class="details col-md-6">
+  <h3 class="product-title">{{ appContent?.selectedGame?.Name }}</h3>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Rank">
+    <strong>Rank :</strong> {{ appContent?.selectedGame?.Rank }}
+  </p>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Platform">
+    <strong>Platform :</strong> {{ appContent?.selectedGame?.Platform }}
+  </p>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Year">
+    <strong>Year :</strong> {{ appContent?.selectedGame?.Year }}
+  </p>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Genre">
+    <strong>Genre :</strong> {{ appContent?.selectedGame?.Genre }}
+  </p>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Publisher">
+    <strong>Publisher :</strong> {{ appContent?.selectedGame?.Publisher }}
+  </p>
+  <p class="product-description" *ngIf="appContent?.selectedGame?.Global_Sales">
+    <strong>Global_Sales :</strong> {{ appContent?.selectedGame?.Global_Sales }}
+  </p>
+</div>
+<div class="clearfix"></div>
+<div class="pull-right">
+  <button class="btn btn-primary" (click)="navigateToGamesListPage()">
+    Go Back
+  </button>
+</div>

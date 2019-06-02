@@ -1,0 +1,16 @@
+<div class="alert alert-info">
+  <button
+    *ngIf="showCloseIcon"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <span [ngClass]="iconClass" *ngIf="iconClass?.length > 0"></span>
+  <strong *ngIf="boldText">
+    {{ boldText }}
+  </strong>
+  {{ message?.length > 0 ? message : defaultMessage }}
+</div>

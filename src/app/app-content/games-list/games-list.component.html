@@ -1,0 +1,70 @@
+<div class="u-margin-bottom-small clearfix">
+  <div class="col-xs-10">
+    <input
+      [disabled]="data?.length < 1"
+      class="form-control full-width"
+      placeholder="Search from games list"
+      [(ngModel)]="searchInput"
+      (input)="onSearchInputValueChange($event)"
+    />
+  </div>
+  <div class="col-xs-2">
+    <button
+      class="btn btn-danger btn-block"
+      [disabled]="searchInput?.length < 1"
+      (click)="searchInput = ''; onSearchInputValueChange($event)"
+    >
+      Clear Search
+    </button>
+  </div>
+</div>
+<div class="u-margin-bottom-small"></div>
+<div class="table-container col-xs-12" #scrollingBlock>
+  <no-data
+    *ngIf="tableData?.length < 1"
+    [message]="searchInput?.length > 0 ? 'No Items matching your search' : null"
+    icon-class="glyphicon glyphicon-info-sign"
+  ></no-data>
+
+  <virtual-scroller
+    #scroll
+    [items]="tableData"
+    [parentScroll]="scrollingBlock"
+    *ngIf="tableData?.length > 0"
+  >
+    <table
+      class="table table-bordered table-striped table-hover full-width table-text-word-wrap"
+    >
+      <thead #header>
+        <tr>
+          <th *ngFor="let header of headers" (click)="sortTableData(header)">
+            {{ header?.displayName }}
+            <span
+              class="glyphicon glyphicon-triangle-bottom"
+              *ngIf="header?.sortDesc"
+            ></span>
+            <span
+              class="glyphicon glyphicon-triangle-top"
+              *ngIf="header?.sortAsc"
+            ></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody #container>
+        <tr *ngFor="let row of scroll?.viewPortItems">
+          <td *ngFor="let header of headers" [ngSwitch]="header?.field">
+            <a
+              *ngSwitchCase="'Name'"
+              [routerLink]="['/app', row?.Rank]"
+              (click)="selectedGame = row"
+            >
+              {{ row[(header?.field)] }}
+            </a>
+            <span *ngSwitchDefault>{{ row[(header?.field)] || 'N/A' }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </virtual-scroller>
+</div>
+<div class="u-margin-bottom-small"></div>

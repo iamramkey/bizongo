@@ -1,0 +1,27 @@
+footer.footer-classic {
+  background: #2d3246;
+  color: #ccc;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.brand {
+  display: block;
+
+  .brand-logo {
+    width: 200px;
+    display: block;
+    margin: auto;
+  }
+}
+
+.phones-list {
+  margin-top: 20px;
+}
+
+.company-info {
+  margin-top: 50px;
+}
